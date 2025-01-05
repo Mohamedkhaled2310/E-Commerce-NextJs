@@ -8,6 +8,14 @@ const Header = () => {
       </div>
       <ul className="flex space-x-4">
         <li>
+          <Link href="/login" className=" mx-3 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+            Log in
+          </Link>
+          <Link href="/register" className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+            Register
+          </Link>
+        </li>
+        <li>
           <Link href="/" className="text-white hover:text-gray-400">
             Home
           </Link>
