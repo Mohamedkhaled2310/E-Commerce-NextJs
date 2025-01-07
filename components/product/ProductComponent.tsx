@@ -14,7 +14,7 @@ const ProductComponent: React.FC<ProductProps> = ({ product }) => {
           className="rounded-md w-full"
         />
       </div>
-      <h2 className="text-lg font-bold mb-2">{product.title}</h2> {/*line-clamp-1*/}
+      <h2 className="text-lg font-bold mb-2">{product.title}</h2>
       <p className="text-sm text-gray-600 mb-2">Category: {product.category}</p>
       <p className="text-gray-800 font-semibold mb-2">${product.price}</p>
       <p className="text-gray-600 mb-4 flex-grow">{product.description}</p>

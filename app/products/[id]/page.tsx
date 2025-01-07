@@ -1,11 +1,13 @@
 import { BASE_URL } from "@/utils/Constants"; 
+import { Product } from "@/utils/Interfaces";
+import Image from "next/image";
 
 interface SingleProductPageProps {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 }
 
-const SingleProductPage = async({ params }: SingleProductPageProps) => {
-    const { id } = await params;
+const SingleProductPage:React.FC<SingleProductPageProps> = async({ params }) => {
+     const { id } = await params;
 
     const response = await fetch(`${BASE_URL}/${id}`);
 
@@ -17,16 +19,18 @@ const SingleProductPage = async({ params }: SingleProductPageProps) => {
 
     return (
         <div className="h-screen flex justify-between items-center gap-6">
-            <div className="flex justify-center mb-6">
-                <img 
+            {/* <div className="flex justify-center mb-6">
+                <Image 
                     src={product.image} 
-                    alt={product.name} 
+                    alt={product.title} 
+                    height={500}
+                    width={500}
                     className="w-full max-w-lg object-cover rounded-lg shadow-lg" 
                 />
-            </div>
+            </div> */}
 
             <div className="text-center">
-                <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
+                <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.title}</h1>
                 <p className="text-lg text-gray-700 mb-4">{product.description}</p>
                 <p className="text-xl font-semibold text-green-600 mb-6">Price: ${product.price}</p>
 
