@@ -2,6 +2,7 @@
 import ProductComponent from "@/components/product/ProductComponent";
 import {  Product } from "@/utils/Interfaces";
 import { BASE_URL } from "@/utils/Constants";
+import SearchBarProducts from "@/components/product/SearchBarProducts";
 
 
 const ProductPage: React.FC = async() => {
@@ -18,7 +19,8 @@ const ProductPage: React.FC = async() => {
 
   return (
     <div className="p-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <SearchBarProducts/>
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {data.map((product) => (
           <div key={product.id}>
             <ProductComponent product={product} />
